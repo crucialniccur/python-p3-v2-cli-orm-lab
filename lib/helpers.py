@@ -118,7 +118,13 @@ def update_employee():
 
 
 def delete_employee():
-    pass
+    id_ = input("Enter the employee's id: ")
+    employee = Employee.find_by_id(id_)
+    if employee:
+        employee.delete()
+        print(f"Employee {id_} deleted")
+    else:
+        print(f"Employee {id_} not found")
 
 
 def list_department_employees():
